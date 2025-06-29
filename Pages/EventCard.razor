@@ -1,0 +1,12 @@
+@using BlazorIndependetWebAssemblyNoAndroid.Models
+
+<div>
+    <h3>@EventItem.Name</h3>
+    <p>Date: @EventItem.Date.ToString("f")</p>
+    <p>Location: @EventItem.Location</p>
+</div>
+
+@code {
+    [Parameter]
+    public Event EventItem { get; set; }
+}
