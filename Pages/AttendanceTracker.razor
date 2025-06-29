@@ -1,0 +1,13 @@
+@page "/attendance"
+<h1>Attendance Tracker</h1>
+<ul>
+    @foreach (var attendee in Attendees)
+    {
+        <li>@attendee</li>
+    }
+</ul>
+<p>Add logic to update attendees based on registration in future steps.</p>
+<a href="/events">Back to Event List</a>
+@code {
+    private List<string> Attendees = new List<string> { "Attendee 1", "Attendee 2" }; // Mock data
+}

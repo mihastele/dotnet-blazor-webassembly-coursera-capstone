@@ -9,12 +9,19 @@
     <EventCard EventItem="ev" />
 }
 
-<a href="/eventdetails">View Event Details</a>
-<a href="/register">Register for Event</a>
+<NavLink href="/eventdetails" Match="NavLinkMatch.All">View Event Details</NavLink>
+<NavLink href="/register" Match="NavLinkMatch.All">Register for Event</NavLink>
 
 @code {
     List<Event> Events = new List<Event>
     {
-        new Event { Name = "Sample Event", Date = DateTime.Now, Location = "Sample Location" }
+        new Event { Name = "Event 1", Date = DateTime.Now, Location = "Location 1" },
+        new Event { Name = "Event 2", Date = DateTime.Now.AddDays(1), Location = "Location 2" },
+        new Event { Name = "Event 3", Date = DateTime.Now.AddDays(2), Location = "Location 3" }
     };
+
+    protected override void OnInitialized()
+    {
+        Console.WriteLine("EventList initialized with " + Events.Count + " events");
+    }
 }
